@@ -76,8 +76,11 @@ include("dbconnect.php");
 
           	//trying to make sure scores for test does not exeed 10 and exam not more than 70
 
-          	if(($first_ca)>10 || ($second_ca)>10 || ($third_ca)>10){
+          	if(($first_ca)>10 || ($second_ca)>10 || ($third_ca)>10)){
 				$errormsg= "<div id='errormsg'>Continues assessment scores cannot exceed 10</div>";
+		}elseif (($first_ca)<0 || ($second_ca)<0 || ($third_ca)<0))
+			$errormsg= "<div id='errormsg'>Continues assessment scores cannot be less than 0</div>";
+		{
 		}else{
 			
 				if(($exam)>70){
